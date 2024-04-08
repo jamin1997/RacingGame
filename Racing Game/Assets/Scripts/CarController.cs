@@ -17,8 +17,6 @@ public class CarController : MonoBehaviour
     private bool isBreaking;
     private float flipStrength = 2f;
     float time;
-    private float XRot;
-    private float YRot;
 
     [SerializeField] Rigidbody rb;
     [SerializeField] public static float motorForce;
@@ -112,14 +110,6 @@ public class CarController : MonoBehaviour
 
     private void Update()
     {
-        XRot = rb.transform.rotation.eulerAngles.x;
-        YRot = rb.transform.rotation.eulerAngles.y;
-        if(Input.GetKey(KeyCode.R))
-        {
-            rb.transform.rotation = Quaternion.Euler(XRot, YRot, 0);
-            rb.angularVelocity = Vector3.zero;
-            rb.velocity= Vector3.zero;
-        }
         float flipStrength = 1f;
         if (time > 3)
         {
