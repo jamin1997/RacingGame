@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RaceFinish : MonoBehaviour
@@ -11,6 +12,8 @@ public class RaceFinish : MonoBehaviour
     public AudioSource FinishMusic;
     public GameObject CompleteTrig;
     public AudioSource levelMusic;
+    public TextMeshProUGUI FinalPosition;
+    [SerializeField] private Position pos;
 
     private void OnTriggerEnter()
     {
@@ -23,5 +26,16 @@ public class RaceFinish : MonoBehaviour
         levelMusic.Stop();
         ViewModes.SetActive(false);
         FinishMusic.Play();
+        Time.timeScale = 0;
+        if (pos.CarPosition == 1)
+        {
+            FinalPosition.GetComponent<TextMeshProUGUI>().text = "Winner!";
+            FinalPosition.gameObject.SetActive(true);
+        }
+        else
+        {
+            FinalPosition.GetComponent<TextMeshProUGUI>().text = "" + pos.CarPosition;
+            FinalPosition.gameObject.SetActive(true);
+        }
     }
 }

@@ -609,7 +609,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 802386787}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: TrackSelect
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1129,7 +1129,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1277408970}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: Track01
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
