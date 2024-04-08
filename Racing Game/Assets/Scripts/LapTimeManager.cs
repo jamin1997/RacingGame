@@ -14,10 +14,13 @@ public class LapTimeManager : MonoBehaviour
     public TextMeshProUGUI SecondBox;
     public TextMeshProUGUI MilliBox;
 
+    public static float RawTime;
+
 
     void Update()
     {
         MilliCount += Time.deltaTime * 10;
+        RawTime += Time.deltaTime * 10;
         MilliDisplay = MilliCount.ToString("F0");
         MilliBox.GetComponent<TextMeshProUGUI>().text = "" + MilliDisplay;
 

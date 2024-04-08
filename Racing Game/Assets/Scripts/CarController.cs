@@ -19,7 +19,7 @@ public class CarController : MonoBehaviour
     float time;
 
     [SerializeField] Rigidbody rb;
-    [SerializeField] private float motorForce;
+    [SerializeField] public static float motorForce;
     [SerializeField] private float breakForce;
     [SerializeField] private float maxSteeringAngle;
 
@@ -37,6 +37,7 @@ public class CarController : MonoBehaviour
 
     private void Start()
     {
+        motorForce = 1000;
         time = Time.deltaTime * 10;
         this.enabled = false;
         StartCoroutine(WaitThreeSeconds());
