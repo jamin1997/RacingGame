@@ -1,7 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 public class CarController : MonoBehaviour
 {
@@ -12,7 +15,8 @@ public class CarController : MonoBehaviour
     private float verticalInput;
     private float steeringAngle;
     private bool isBreaking;
-    private float flipStrength = 1f;
+    private float flipStrength = 2f;
+    float time;
 
     [SerializeField] Rigidbody rb;
     [SerializeField] private float motorForce;
@@ -30,6 +34,19 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform backRightWheelTransform;
 
     // Start is called before the first frame update
+
+    private void Start()
+    {
+        time = Time.deltaTime * 10;
+        this.enabled = false;
+        StartCoroutine(WaitThreeSeconds());
+    }
+
+    IEnumerator WaitThreeSeconds()
+    {
+        yield return new WaitForSeconds(3);
+        this.enabled = true;
+    }
     private void FixedUpdate()
     {
         GetInput();
@@ -93,7 +110,10 @@ public class CarController : MonoBehaviour
     private void Update()
     {
         float flipStrength = 1f;
-
+        if (time > 3)
+        {
+            this.enabled = true;
+        }
         if (Mathf.Abs(transform.localRotation.eulerAngles.z) > 90f)
         {
             rb.AddRelativeTorque(0f, 0f, flipStrength, ForceMode.Acceleration);
