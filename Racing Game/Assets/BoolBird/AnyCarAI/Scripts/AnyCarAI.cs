@@ -462,18 +462,6 @@ public class AnyCarAI : MonoBehaviour
 
         #endregion
 
-        #region SMOKE
-
-        smokeParticles = transform.root.GetComponentInChildren<ParticleSystem>();
-
-        if (!smokeOn)
-        {
-            smokeParticles.Stop();
-        }
-        else
-        {
-            smokeParticles.Play();
-        }
 
         #endregion
 
@@ -494,27 +482,12 @@ public class AnyCarAI : MonoBehaviour
 
         #endregion
 
-        #region EXHAUST
 
-        if (exhaustFlame)
-        {
-            if (exhaustObj == null)
-            {
-                exhaustObj = transform.GetChild(1).Find("ExhaustPipe(Clone)").gameObject;
 
-                exhaustVisual = exhaustObj.GetComponent<ParticleSystem>();
-
-                exhaustSoundSource = exhaustObj.GetComponent<AudioSource>();
-                exhaustSoundSource.clip = exhaustSound;
-                exhaustSoundSource.volume = exhaustVolume;
-            }
-        }
-
-        #endregion
 
         SetWheelsValues();
 
-        #endregion
+
     }
 
     private void Update()

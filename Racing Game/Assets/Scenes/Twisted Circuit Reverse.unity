@@ -7706,7 +7706,7 @@ MonoBehaviour:
   speedType: 1
   centerOfMass: {x: 0, y: 0, z: 0}
   vehicleMass: 1000
-  motorTorque: 2200
+  motorTorque: 2100
   brakeTorque: 20000
   reverseTorque: 500
   handbrakeTorque: 10000000
