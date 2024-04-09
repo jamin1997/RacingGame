@@ -16,7 +16,7 @@ public class PositionStart : MonoBehaviour
 
     void SetPosition(int start)
     {
-        pos.CarPosition= start;
+        pos.CarPosition = start;
     }
 
 }
