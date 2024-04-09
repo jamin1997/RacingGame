@@ -63,12 +63,19 @@ public class CarController : MonoBehaviour
     {
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce;
-        breakForce = !isBreaking ? breakForce : 0f;
         if (isBreaking)
         {
-            print("brake being pressed");
+            breakForce = 9000;
             ApplyBreaking();
         }
+    }
+
+    private void RemoveBreaking()
+    {
+        frontLeftWheelCollider.brakeTorque = 0;
+        frontRightWheelCollider.brakeTorque = 0;
+        backLeftWheelCollider.brakeTorque = 0;
+        backRightWheelCollider.brakeTorque = 0;
     }
 
     private void ApplyBreaking()
@@ -114,6 +121,12 @@ public class CarController : MonoBehaviour
     {
         XRot = rb.transform.rotation.eulerAngles.x;
         YRot = rb.transform.rotation.eulerAngles.y;
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            ApplyBreaking();
+        }
+        RemoveBreaking();
         if (Input.GetKey(KeyCode.R))
         {
             rb.transform.rotation = Quaternion.Euler(XRot, YRot, 0);

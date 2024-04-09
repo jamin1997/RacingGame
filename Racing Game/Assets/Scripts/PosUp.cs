@@ -17,7 +17,6 @@ public class PosUp : MonoBehaviour
             {
                 pos.CarPosition -= 2;
             }
-            print(pos.CarPosition);
             PositionDisplay.GetComponent<TextMeshProUGUI>().text = "Position: " + pos.CarPosition.ToString();
         }
     }
