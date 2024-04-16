@@ -1286,7 +1286,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1405760870}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: Track03
+        m_MethodName: Track02
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1953,7 +1953,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1849156121}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: Track02
+        m_MethodName: Track03
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
